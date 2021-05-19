@@ -1,4 +1,5 @@
 FROM python:3.7-alpine
+LABEL maintainer = "zjuzzc@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
 COPY ./requirements.txt /requirements.txt
