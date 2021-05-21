@@ -4,7 +4,7 @@ from django.urls import reverse
 
 
 class AdminSiteTests(TestCase):
-    def setup(self):
+    def setUp(self):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
             'zzc@gmail.com',
@@ -20,6 +20,7 @@ class AdminSiteTests(TestCase):
 
     def test_user_listed(self):
         url = reverse('admin:core_user_changelist')
+        print(url)
         res = self.client.get(url)
 
         self.assertContains(res, self.user.name)
